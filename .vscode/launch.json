@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "GestioneDistributoreBiglietti",
+            "request": "launch",
+            "mainClass": "distributore.biglietti.GestioneDistributoreBiglietti",
+            "projectName": "Programmi_f44532a"
+        },
+        {
+            "type": "java",
+            "name": "DistributoreBiglietti",
+            "request": "launch",
+            "mainClass": "distributore.biglietti.DistributoreBiglietti",
+            "projectName": "Programmi_f44532a"
+        },
+        {
+            "type": "java",
+            "name": "cc",
+            "request": "launch",
+            "mainClass": "cc",
+            "projectName": "Programmi_f44532a"
+        }
+    ]
+}
