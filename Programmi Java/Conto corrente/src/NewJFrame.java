@@ -1,3 +1,7 @@
+
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -51,6 +55,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel2.setText("Nuovo correntista:");
 
         btnCrea.setText("Crea il conto");
+        btnCrea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,8 +150,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(java.awt.Color.lightGray);
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setFocusable(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -188,19 +199,26 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVersamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVersamentoActionPerformed
-        c.versamento(saldo);
-        saldo=c.get_saldo();
-        jTextArea1.append("Hai Versato: "+txtImp.getText()+"\nIl tuo saldo aggiornato è di "+saldo+" Euro\n\n-----------------------------");
+        c.versamento(Float.valueOf(txtImp.getText()));
+        jTextArea1.append("\n"+c.orario()+"  Hai Versato: "+txtImp.getText()+"\nIl tuo saldo aggiornato è di "+c.get_saldo()+" Euro\n-----------------------------");
     }//GEN-LAST:event_btnVersamentoActionPerformed
 
     private void btnPrelievoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrelievoActionPerformed
-        int es=c.prelievo(saldo);
-        saldo=c.get_saldo();
-        if(es==1)
-            jTextArea1.append("Hai Prelevato: "+txtImp.getText()+"\nIl tuo saldo aggiornato è di "+saldo+" Euro\n\n-----------------------------");
+        int es=c.prelievo(Float.valueOf(txtImp.getText()));
+        if(es==0){
+            jTextArea1.append("\n"+c.orario()+"  Hai Prelevato: "+txtImp.getText()+"\nIl tuo saldo aggiornato è di "+c.get_saldo()+" Euro\n-----------------------------");
+            }
         else
-            jTextArea1.append();
+            jTextArea1.append("\n"+c.orario()+"  Prelievo fallito, saldo insufficiente\nIl tuo saldo e' di "+c.get_saldo()+" Euro\n-----------------------------");
     }//GEN-LAST:event_btnPrelievoActionPerformed
+
+    private void btnCreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreaActionPerformed
+        c.set_saldo(0);
+        jTextArea1.setText("-----------------------------\n"+c.orario()+"  Conto Creato\nNumero Conto:"+txtCC.getText()+"\nNome Correntista:"+txtNome.getText()+"\nSaldo iniziale:"+saldo+"\n-----------------------------");
+        txtCC.setText("");
+        txtImp.setText("");
+        txtNome.setText("");
+    }//GEN-LAST:event_btnCreaActionPerformed
 
     /**
      * @param args the command line arguments
