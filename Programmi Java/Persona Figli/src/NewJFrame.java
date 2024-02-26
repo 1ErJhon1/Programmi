@@ -1,4 +1,6 @@
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -65,6 +67,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -340,6 +345,41 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Stampa dati"));
+        jPanel5.setAutoscrolls(true);
+
+        jLabel11.setText("Clicca per stampare i dati della persona selezionata");
+
+        jButton2.setText("Stampa");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(38, 38, 38))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -349,7 +389,9 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -363,7 +405,10 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -384,10 +429,26 @@ public class NewJFrame extends javax.swing.JFrame {
         
         Object[] rowdata={personaFigli.nome,personaFigli.redditoNetto()};
         model.addRow(rowdata);
+        int i;
+        for(i=0;i<cmxnfigli.getSelectedIndex();i++){
+            int indice=i;
+            jTextArea1.append("Inserisci l'eta' del "+(indice+1)+" figlio\n");
+        btninstxt.addActionListener(new ActionListener() {
+            @Override
+                public void actionPerformed(ActionEvent e) {
+                    pf[np].etaFigli[indice]=Integer.valueOf(jTextField1.getText());
+                }
+            });
+        }
+        jTextArea1.append("Inserimento età completato");
     }//GEN-LAST:event_btnins1ActionPerformed
 
     private void txtmediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmediaActionPerformed
-        // TODO add your handling code here:
+        int pos=-1;
+        for(int i=0;i<np;i++)
+            if(pf[i].equals(txtmedia.getText()))
+                pos=i;
+        jTextArea1.setText("La media dell'età dei figli di "+pf[pos].nome+"è di "+pf[pos].mediaEta()+" anni");
     }//GEN-LAST:event_txtmediaActionPerformed
 
     private void btnstampamaxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstampamaxfActionPerformed
@@ -404,9 +465,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnstampamaxfActionPerformed
 
     private void btnmediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmediaActionPerformed
+                boolean check=false;
         for(int i=0;i<np;i++){
-            if(pf[i].nome.equals(txtmedia.getText()))
+            if(pf[i].nome.equals(txtmedia.getText())){
                 jTextArea1.setText("L'eta media dei figli di:"+pf[i].nome+" e':"+pf[i].mediaEta());
+                check=true;
+            }
+        }
+        if(check==false){
+            jTextArea1.setText("Persona non trovata");
         }
     }//GEN-LAST:event_btnmediaActionPerformed
 
@@ -424,11 +491,13 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btninstxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninstxtActionPerformed
-        for(int i=0;i<cmxnfigli.getSelectedIndex();i++){
-            jTextArea1.setText("Inserisci l'eta' del "+(i+1)+" figlio");
-            pf[np].etaFigli[i]=Integer.valueOf(jTextField1.getText());
-        }
+
     }//GEN-LAST:event_btninstxtActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int i=jTable1.getSelectedRow();
+        jTextArea1.setText("NOME: "+pf[i].nome+"\nSESSO: "+pf[i].sesso+"\nALIQUOTA PAGATA: "+pf[i].aliquotaPagata+"%\nNUMERO FIGLI: "+pf[i].nfigli);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,8 +542,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmxnfigli;
     private javax.swing.JComboBox<String> cmxsesso;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -487,6 +558,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
