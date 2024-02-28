@@ -4,20 +4,23 @@
  */
 package gestione.laurea;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author giann
  */
 public class NewJFrame extends javax.swing.JFrame {
     corsolaurea cl=new corsolaurea("Informatica");
+    DefaultListModel dlm=new DefaultListModel();
 
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+        lbl_corso.setText(cl.getDenominazione());
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,9 +31,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lbl_corso = new javax.swing.JLabel();
-        jLabel1.setText(cl.get_denominazione);
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jList1.setModel(dlm);
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         btn_elm = new javax.swing.JButton();
@@ -117,16 +120,14 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(jList1.value){
-            jList1.remove(0);
-        }
         studente s=new studente(jTextField1.getText(), cl);
         cl.addstudente(s);
+        dlm.addElement(s.getMatricola());
+        jTextField1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btn_elmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_elmActionPerformed
-        jList1.getSelectedIndex();
-        jList1.remove(jList1.getSelectedIndex());
+        dlm.remove(jList1.getSelectedIndex());
     }//GEN-LAST:event_btn_elmActionPerformed
 
     /**
@@ -155,7 +156,6 @@ public class NewJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
