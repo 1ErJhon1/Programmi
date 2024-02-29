@@ -16,7 +16,7 @@ analizza il tipo di associazione fra le due classi e inserisci gli attributi nec
 public class NewJFrame extends javax.swing.JFrame {
 
     ArrayList<reparto> lrp=new ArrayList<>();
-    DefaultComboBoxModel<> mcb=new DefaultComboBoxModel<>();
+    DefaultComboBoxModel<String> mcb=new DefaultComboBoxModel<>();
     
     /**
      * Creates new form NewJFrame
@@ -253,7 +253,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void btninsrpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsrpActionPerformed
         reparto rp=new reparto(txtnmrp.getText(), Integer.valueOf(txtpnrp.getText()));
         lrp.add(rp);
-        mcb.addElement(rp);
+        mcb.addElement(rp.getNome());
         jComboBox1.setModel(mcb);
         jComboBox2.setModel(mcb);
     }//GEN-LAST:event_btninsrpActionPerformed
