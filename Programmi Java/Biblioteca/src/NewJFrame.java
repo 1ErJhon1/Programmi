@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 public class NewJFrame extends javax.swing.JFrame {
 
     ArrayList<Biblioteca> biblioteche=new ArrayList<>();
+    NewJFrame1 jFrame1=new NewJFrame1();
+    DefaultTableModel dtm=new DefaultTableModel(new Object[][]{},new String[]{"CODICE", "NOME", "AUTORE", "CASA EDITRICE", "PREZZO", "QUANTITÀ", "DISPONIBILI", "NUMERO SCAFFALE"});
     /**
      * Creates new form NewJFrame
      */
@@ -30,6 +33,7 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtnbib = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -37,7 +41,20 @@ public class NewJFrame extends javax.swing.JFrame {
         txtindbib = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtcittabib = new javax.swing.JTextField();
+        btninsbib = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        btnpresta = new javax.swing.JButton();
+        btnrestituisci = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtlog = new javax.swing.JLabel();
+
+        jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +66,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Inserisci città");
 
-        jButton1.setText("Inserisci");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btninsbib.setText("Inserisci");
+        btninsbib.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btninsbibActionPerformed(evt);
             }
         });
 
@@ -70,7 +87,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addGap(3, 3, 3)
                                 .addComponent(txtindbib, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(btninsbib)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,8 +121,113 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(txtindbib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jButton1)))
+                        .addComponent(btninsbib)))
                 .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserisci Libro"));
+
+        jButton1.setText("Inserisci libro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(3, 3, 3)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jButton1)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Cerca Libro"));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CODICE", "NOME", "AUTORE", "CASA EDITRICE", "PREZZO", "QUANTITÀ", "DISPONIBILI", "NUMERO SCAFFALE"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel4.setText("Inserisci Biblioteca da visualizzare");
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        btnpresta.setText("Prendi in prestito");
+        btnpresta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprestaActionPerformed(evt);
+            }
+        });
+
+        btnrestituisci.setText("Restituitsci");
+        btnrestituisci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrestituisciActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Seleziona un libro da prendere in prestito o restituire");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94)
+                .addComponent(btnpresta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnrestituisci)
+                .addGap(30, 30, 30))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnpresta)
+                    .addComponent(btnrestituisci))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -113,27 +235,106 @@ public class NewJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(txtlog)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(txtlog)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btninsbibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsbibActionPerformed
         String nome=txtnbib.getText();
         String citta=txtcittabib.getText();
         String ind=txtindbib.getText();
         Biblioteca bib=new Biblioteca(nome, citta, ind);
         biblioteche.add(bib);
+        jFrame1.setBiblioteche(biblioteche);
+        jComboBox1.setModel(jFrame1.aggmodel());
+        txtlog.setText("Biblioteca Inserita");
+    }//GEN-LAST:event_btninsbibActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        Biblioteca selbib=new Biblioteca("", "", "");
+        dtm.setRowCount(0);
+        for(int i=0;i<biblioteche.size();i++){
+            if(jComboBox1.getSelectedItem().toString().equals(biblioteche.get(i).getNome())){
+                selbib=biblioteche.get(i);
+            }
+        }
+        for(int i=0;i<biblioteche.size();i++){
+            for(int j=0;j<selbib.libri.size();j++){
+                String nome=selbib.libri.get(i).nome;
+                String codice=String.valueOf(selbib.libri.get(i).codice);
+                String aut=selbib.libri.get(i).aut;
+                String casaed=selbib.libri.get(i).casaed;
+                String prz=String.valueOf(selbib.libri.get(i).prz);
+                String nscaff=String.valueOf(selbib.libri.get(i).nscaff);
+                String disponibili=String.valueOf(selbib.libri.get(i).disponibili);
+                String quantita=String.valueOf(selbib.libri.get(i).quantita);
+                Object[] row=new Object[]{codice,nome,aut,casaed,prz,quantita,disponibili,nscaff};
+                dtm.addRow(row);
+                jTable1.setModel(dtm);
+                dtm.fireTableDataChanged();
+
+            }
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void btnprestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprestaActionPerformed
+        Biblioteca selbib=new Biblioteca("", "", "");
+        for(int i=0;i<biblioteche.size();i++){
+            if(jComboBox1.getSelectedItem().toString().equals(biblioteche.get(i).getNome())){
+                selbib=biblioteche.get(i);
+            }
+        }
+        if(selbib.libri.get(jTable1.getSelectedRow()).disponibili==0){
+            selbib.libri.get(jTable1.getSelectedRow()).presta();
+            txtlog.setText("Tutti i libri disponibili sono stati prestati");
+        }
+    }//GEN-LAST:event_btnprestaActionPerformed
+    
+    private void btnrestituisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrestituisciActionPerformed
+        Biblioteca selbib=new Biblioteca("", "", "");
+        for(int i=0;i<biblioteche.size();i++){
+            if(jComboBox1.getSelectedItem().toString().equals(biblioteche.get(i).getNome())){
+                selbib=biblioteche.get(i);
+            }
+        }
+        if(selbib.libri.get(jTable1.getSelectedRow()).quantita!=selbib.libri.get(jTable1.getSelectedRow()).disponibili){
+            selbib.libri.get(jTable1.getSelectedRow()).restituisci();
+            txtlog.setText("Impossibile restituire");
+        }
+    }//GEN-LAST:event_btnrestituisciActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jFrame1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -167,18 +368,31 @@ public class NewJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NewJFrame().setVisible(true);
+                new NewJFrame1().setVisible(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btninsbib;
+    private javax.swing.JButton btnpresta;
+    private javax.swing.JButton btnrestituisci;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtcittabib;
     private javax.swing.JTextField txtindbib;
+    private javax.swing.JLabel txtlog;
     private javax.swing.JTextField txtnbib;
     // End of variables declaration//GEN-END:variables
 }

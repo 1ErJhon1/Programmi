@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -19,13 +20,28 @@ import javax.swing.DefaultComboBoxModel;
  * @author giann
  */
 public class NewJFrame1 extends javax.swing.JFrame {
-    
+    ArrayList<Biblioteca> biblioteche=new ArrayList<>();
+    DefaultComboBoxModel<String> comboBoxModel=new DefaultComboBoxModel<>();
     /**
      * Creates new form NewJFrame1
      */
     public NewJFrame1() {
         initComponents();
-        jPanel1.setVisible(false);
+        comboBoxModel=new DefaultComboBoxModel<>();
+        cbxbiblib.setModel(aggmodel());
+    }
+    
+    public DefaultComboBoxModel aggmodel(){
+        for(int i=0;i<biblioteche.size();i++){
+        Biblioteca selbib=new Biblioteca("", "", "");
+            selbib=biblioteche.get(i);
+            comboBoxModel.addElement(selbib.getNome());
+        }
+        return comboBoxModel;
+    }
+    
+    public void setBiblioteche(ArrayList<Biblioteca> biblioteche) {
+        this.biblioteche = biblioteche;
     }
 
     /**
@@ -79,6 +95,12 @@ public class NewJFrame1 extends javax.swing.JFrame {
 
         jLabel6.setText("Biblioteca");
 
+        cbxbiblib.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxbiblibActionPerformed(evt);
+            }
+        });
+
         btninslib.setText("Inserisci");
         btninslib.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,31 +120,13 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtautlib, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtcelib, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtnslib)
-                            .addComponent(txtqtlib, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtprzlib)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(131, 131, 131))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(146, 146, 146))
-                            .addComponent(cbxbiblib, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -130,12 +134,24 @@ public class NewJFrame1 extends javax.swing.JFrame {
                         .addGap(69, 69, 69)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtnlib)
-                            .addComponent(txtcodlib))))
+                            .addComponent(txtcodlib)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxbiblib, 0, 143, Short.MAX_VALUE)
+                            .addComponent(txtnslib)
+                            .addComponent(txtqtlib, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtprzlib))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
                 .addComponent(btninslib)
-                .addGap(58, 58, 58))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,9 +188,9 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(cbxbiblib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btninslib)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,23 +198,24 @@ public class NewJFrame1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btninslibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninslibActionPerformed
-        DefaultComboBoxModel<String> comboBoxModel=new DefaultComboBoxModel<>();
+        int num=0;
+        Biblioteca selbib=new Biblioteca("", "", "");
         String nome=txtnlib.getText();
         int codice=Integer.valueOf(txtcodlib.getText());
         String autore=txtautlib.getText();
@@ -207,14 +224,25 @@ public class NewJFrame1 extends javax.swing.JFrame {
         int nscaff=Integer.valueOf(txtnslib.getText());
         int quantita=Integer.valueOf(txtqtlib.getText());
         String stringbiblioteca=cbxbiblib.getSelectedItem().toString();
+        for(int i=0;i<biblioteche.size();i++){
+            if(stringbiblioteca.equals(biblioteche.get(i).getNome())){
+                selbib=biblioteche.get(i);
+                num=i;
+            }
+        }
+        Libro libro=new Libro(nome, codice, autore, casaed, prz, nscaff, quantita, selbib);
+        selbib.addlib(libro);
+        biblioteche.set(num, selbib);
         
-        Libro libro=new Libro(nome, codice, autore, casaed, prz, nscaff, quantita, quantita, this.biblioteca.);
-        this.biblioteca.addlib(libro);
     }//GEN-LAST:event_btninslibActionPerformed
 
     private void txtnlibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnlibActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnlibActionPerformed
+
+    private void cbxbiblibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxbiblibActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxbiblibActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,7 +274,8 @@ public class NewJFrame1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame1().setVisible(true);
+                NewJFrame1 frame=new NewJFrame1();
+                frame.setVisible(true);
             }
         });
     }

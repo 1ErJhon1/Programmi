@@ -29,4 +29,10 @@ public class Biblioteca {
     public void removelib(Libro libro){
         libri.remove(libro);
     }
+
+    public String getNome() {
+        return nome;
+    }
+    
+    
 }
