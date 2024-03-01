@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cbxreg" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="cbxprov" max="32767" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cbxprov" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <Component id="cbxreg" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JComboBox" name="cbxprov">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="107">
+            <StringItem index="0" value="L&apos;Aquila"/>
+            <StringItem index="1" value="Teramo"/>
+            <StringItem index="2" value="Pescara"/>
+            <StringItem index="3" value="Chieti"/>
+            <StringItem index="4" value="Potenza"/>
+            <StringItem index="5" value="Matera"/>
+            <StringItem index="6" value="Catanzaro"/>
+            <StringItem index="7" value="Cosenza"/>
+            <StringItem index="8" value="Reggio Calabria"/>
+            <StringItem index="9" value="Crotone"/>
+            <StringItem index="10" value="Vibo Valentia"/>
+            <StringItem index="11" value="Napoli"/>
+            <StringItem index="12" value="Avellino"/>
+            <StringItem index="13" value="Benevento"/>
+            <StringItem index="14" value="Caserta"/>
+            <StringItem index="15" value="Salerno"/>
+            <StringItem index="16" value="Bologna"/>
+            <StringItem index="17" value="Ferrara"/>
+            <StringItem index="18" value="Forl&#xec;-Cesena"/>
+            <StringItem index="19" value="Modena"/>
+            <StringItem index="20" value="Parma"/>
+            <StringItem index="21" value="Piacenza"/>
+            <StringItem index="22" value="Ravenna"/>
+            <StringItem index="23" value="Reggio Emilia"/>
+            <StringItem index="24" value="Rimini"/>
+            <StringItem index="25" value="Udine"/>
+            <StringItem index="26" value="Gorizia"/>
+            <StringItem index="27" value="Trieste"/>
+            <StringItem index="28" value="Pordenone"/>
+            <StringItem index="29" value="Roma"/>
+            <StringItem index="30" value="Frosinone"/>
+            <StringItem index="31" value="Latina"/>
+            <StringItem index="32" value="Rieti"/>
+            <StringItem index="33" value="Viterbo"/>
+            <StringItem index="34" value="Genova"/>
+            <StringItem index="35" value="Imperia"/>
+            <StringItem index="36" value="La Spezia"/>
+            <StringItem index="37" value="Savona"/>
+            <StringItem index="38" value="Milano"/>
+            <StringItem index="39" value="Bergamo"/>
+            <StringItem index="40" value="Brescia"/>
+            <StringItem index="41" value="Como"/>
+            <StringItem index="42" value="Cremona"/>
+            <StringItem index="43" value="Lecco"/>
+            <StringItem index="44" value="Lodi"/>
+            <StringItem index="45" value="Mantova"/>
+            <StringItem index="46" value="Monza e Brianza"/>
+            <StringItem index="47" value="Pavia"/>
+            <StringItem index="48" value="Sondrio"/>
+            <StringItem index="49" value="Varese"/>
+            <StringItem index="50" value="Ancona"/>
+            <StringItem index="51" value="Ascoli Piceno"/>
+            <StringItem index="52" value="Fermo"/>
+            <StringItem index="53" value="Macerata"/>
+            <StringItem index="54" value="Pesaro e Urbino"/>
+            <StringItem index="55" value="Campobasso"/>
+            <StringItem index="56" value="Isernia"/>
+            <StringItem index="57" value="Torino"/>
+            <StringItem index="58" value="Alessandria"/>
+            <StringItem index="59" value="Asti"/>
+            <StringItem index="60" value="Biella"/>
+            <StringItem index="61" value="Cuneo"/>
+            <StringItem index="62" value="Novara"/>
+            <StringItem index="63" value="Verbano-Cusio-Ossola"/>
+            <StringItem index="64" value="Vercelli"/>
+            <StringItem index="65" value="Bari"/>
+            <StringItem index="66" value="Barletta-Andria-Trani"/>
+            <StringItem index="67" value="Brindisi"/>
+            <StringItem index="68" value="Foggia"/>
+            <StringItem index="69" value="Lecce"/>
+            <StringItem index="70" value="Taranto"/>
+            <StringItem index="71" value="Cagliari"/>
+            <StringItem index="72" value="Nuoro"/>
+            <StringItem index="73" value="Oristano"/>
+            <StringItem index="74" value="Sassari"/>
+            <StringItem index="75" value="Sud Sardegna"/>
+            <StringItem index="76" value="Agrigento"/>
+            <StringItem index="77" value="Caltanissetta"/>
+            <StringItem index="78" value="Catania"/>
+            <StringItem index="79" value="Enna"/>
+            <StringItem index="80" value="Messina"/>
+            <StringItem index="81" value="Palermo"/>
+            <StringItem index="82" value="Ragusa"/>
+            <StringItem index="83" value="Siracusa"/>
+            <StringItem index="84" value="Trapani"/>
+            <StringItem index="85" value="Arezzo"/>
+            <StringItem index="86" value="Firenze"/>
+            <StringItem index="87" value="Grosseto"/>
+            <StringItem index="88" value="Livorno"/>
+            <StringItem index="89" value="Lucca"/>
+            <StringItem index="90" value="Massa-Carrara"/>
+            <StringItem index="91" value="Pisa"/>
+            <StringItem index="92" value="Pistoia"/>
+            <StringItem index="93" value="Prato"/>
+            <StringItem index="94" value="Siena"/>
+            <StringItem index="95" value="Trento"/>
+            <StringItem index="96" value="Bolzano"/>
+            <StringItem index="97" value="Perugia"/>
+            <StringItem index="98" value="Terni"/>
+            <StringItem index="99" value="Aosta"/>
+            <StringItem index="100" value="Belluno"/>
+            <StringItem index="101" value="Padova"/>
+            <StringItem index="102" value="Rovigo"/>
+            <StringItem index="103" value="Treviso"/>
+            <StringItem index="104" value="Venezia"/>
+            <StringItem index="105" value="Verona"/>
+            <StringItem index="106" value="Vicenza"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxprovActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Scegli la provincia"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Scegli la regione"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbxreg">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="20">
+            <StringItem index="0" value="Abruzzo"/>
+            <StringItem index="1" value="Basilicata"/>
+            <StringItem index="2" value="Calabria"/>
+            <StringItem index="3" value="Campania"/>
+            <StringItem index="4" value="Emilia-Romagna"/>
+            <StringItem index="5" value="Friuli-Venezia Giulia"/>
+            <StringItem index="6" value="Lazio"/>
+            <StringItem index="7" value="Liguria"/>
+            <StringItem index="8" value="Lombardia"/>
+            <StringItem index="9" value="Marche"/>
+            <StringItem index="10" value="Molise"/>
+            <StringItem index="11" value="Piemonte"/>
+            <StringItem index="12" value="Puglia"/>
+            <StringItem index="13" value="Sardegna"/>
+            <StringItem index="14" value="Sicilia"/>
+            <StringItem index="15" value="Toscana"/>
+            <StringItem index="16" value="Trentino-Alto Adige"/>
+            <StringItem index="17" value="Umbria"/>
+            <StringItem index="18" value="Valle d&apos;Aosta"/>
+            <StringItem index="19" value="Veneto"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxregActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Regione"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Stampa dati"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Provincia"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
