@@ -27,6 +27,7 @@ public class Libro {
         this.nscaff = nscaff;
         this.quantita = quantita;
         this.biblioteca = biblioteca;
+        this.disponibili = this.quantita;
     }
     
     public void sconto(int sconto){
