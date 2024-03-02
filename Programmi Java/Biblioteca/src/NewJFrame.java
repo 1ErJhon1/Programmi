@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -24,6 +25,20 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void setTxtlog(String txtlog) {
+        this.txtlog.setText(txtlog);
+    }
+    
+    public Biblioteca setbib(){
+        Biblioteca selbib=new Biblioteca("", "", "");
+        for(int i=0;i<biblioteche.size();i++){
+            if(jComboBox1.getSelectedItem().toString().equals(biblioteche.get(i).getNome())){
+                selbib=biblioteche.get(i);
+            }
+        }
+        return selbib;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -277,7 +292,12 @@ public class NewJFrame extends javax.swing.JFrame {
         biblioteche.add(bib);
         jFrame1.setBiblioteche(biblioteche);
         jComboBox1.setModel(jFrame1.aggmodel());
+        jFrame1.setComboBoxModel(jFrame1.aggmodel());
+        
         txtlog.setText("Biblioteca Inserita");
+        txtcittabib.setText("");
+        txtindbib.setText("");
+        txtnbib.setText("");
     }//GEN-LAST:event_btninsbibActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -301,8 +321,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 Object[] row=new Object[]{codice,nome,aut,casaed,prz,quantita,disponibili,nscaff};
                 dtm.addRow(row);
                 jTable1.setModel(dtm);
-                dtm.fireTableDataChanged();
-
             }
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed

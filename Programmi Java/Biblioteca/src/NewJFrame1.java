@@ -32,16 +32,21 @@ public class NewJFrame1 extends javax.swing.JFrame {
     }
     
     public DefaultComboBoxModel aggmodel(){
+        DefaultComboBoxModel<String> comboBoxModel=new DefaultComboBoxModel<>();
+        comboBoxModel.removeAllElements();
         for(int i=0;i<biblioteche.size();i++){
-        Biblioteca selbib=new Biblioteca("", "", "");
-            selbib=biblioteche.get(i);
-            comboBoxModel.addElement(selbib.getNome());
+            comboBoxModel.addElement(biblioteche.get(i).getNome());
         }
         return comboBoxModel;
     }
     
     public void setBiblioteche(ArrayList<Biblioteca> biblioteche) {
         this.biblioteche = biblioteche;
+    }
+
+    public void setComboBoxModel(DefaultComboBoxModel<String> comboBoxModel) {
+        this.comboBoxModel = comboBoxModel;
+        this.cbxbiblib.setModel(comboBoxModel);
     }
 
     /**
@@ -198,16 +203,16 @@ public class NewJFrame1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -233,7 +238,17 @@ public class NewJFrame1 extends javax.swing.JFrame {
         Libro libro=new Libro(nome, codice, autore, casaed, prz, nscaff, quantita, selbib);
         selbib.addlib(libro);
         biblioteche.set(num, selbib);
-        
+        txtautlib.setText("");
+        txtcelib.setText("");
+        txtcodlib.setText("");
+        txtnlib.setText("");
+        txtnslib.setText("");
+        txtprzlib.setText("");
+        txtqtlib.setText("");
+        NewJFrame frame=new NewJFrame();
+        frame.setTxtlog("Libro Inserito correttamente");
+        NewJFrame1 frame1=new NewJFrame1();
+        frame1.setVisible(false);
     }//GEN-LAST:event_btninslibActionPerformed
 
     private void txtnlibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnlibActionPerformed
@@ -241,7 +256,6 @@ public class NewJFrame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtnlibActionPerformed
 
     private void cbxbiblibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxbiblibActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_cbxbiblibActionPerformed
 
     /**
