@@ -39,6 +39,14 @@ public class NewJFrame1 extends javax.swing.JFrame {
         }
         return comboBoxModel;
     }
+
+    public DefaultComboBoxModel<String> getComboBoxModel() {
+        return comboBoxModel;
+    }
+
+    public void setCbxbiblib(DefaultComboBoxModel model) {
+        this.cbxbiblib.setModel(model);
+    }
     
     public void setBiblioteche(ArrayList<Biblioteca> biblioteche) {
         this.biblioteche = biblioteche;

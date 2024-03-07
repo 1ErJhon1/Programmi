@@ -291,10 +291,9 @@ public class NewJFrame extends javax.swing.JFrame {
         Biblioteca bib=new Biblioteca(nome, citta, ind);
         biblioteche.add(bib);
         jFrame1.setBiblioteche(biblioteche);
-        jComboBox1.setModel(jFrame1.aggmodel());
         jFrame1.setComboBoxModel(jFrame1.aggmodel());
-        
-        txtlog.setText("Biblioteca Inserita");
+        jComboBox1.setModel(jFrame1.aggmodel());
+        setTxtlog("Biblioteca Inserita");
         txtcittabib.setText("");
         txtindbib.setText("");
         txtnbib.setText("");
@@ -310,14 +309,14 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         for(int i=0;i<biblioteche.size();i++){
             for(int j=0;j<selbib.libri.size();j++){
-                String nome=selbib.libri.get(i).nome;
-                String codice=String.valueOf(selbib.libri.get(i).codice);
-                String aut=selbib.libri.get(i).aut;
-                String casaed=selbib.libri.get(i).casaed;
-                String prz=String.valueOf(selbib.libri.get(i).prz);
-                String nscaff=String.valueOf(selbib.libri.get(i).nscaff);
-                String disponibili=String.valueOf(selbib.libri.get(i).disponibili);
-                String quantita=String.valueOf(selbib.libri.get(i).quantita);
+                String nome=selbib.libri.get(j).nome;
+                String codice=String.valueOf(selbib.libri.get(j).codice);
+                String aut=selbib.libri.get(j).aut;
+                String casaed=selbib.libri.get(j).casaed;
+                String prz=String.valueOf(selbib.libri.get(j).prz);
+                String nscaff=String.valueOf(selbib.libri.get(j).nscaff);
+                String disponibili=String.valueOf(selbib.libri.get(j).disponibili);
+                String quantita=String.valueOf(selbib.libri.get(j).quantita);
                 Object[] row=new Object[]{codice,nome,aut,casaed,prz,quantita,disponibili,nscaff};
                 dtm.addRow(row);
                 jTable1.setModel(dtm);
