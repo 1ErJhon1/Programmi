@@ -170,21 +170,21 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(64, 64, 64)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2)
+                        .addGap(128, 128, 128))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,11 +193,11 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(115, Short.MAX_VALUE))
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -256,35 +256,53 @@ public class NewJFrame extends javax.swing.JFrame {
                 cic.numero=nnum;
                 break;
             case 3:
-                Date ntempo = null;
-            try {
-                ntempo = sdf.parse((JOptionPane.showInputDialog("Inserisci il tempo modificato")));
-            } catch (ParseException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                ciclisti.set(pos, cic);
-                cic.tempo=ntempo;
-                dtm.setRowCount(0);
-                for (int i = 0; i < ciclisti.size(); i++) {
-                Ciclista CiclistaSel = ciclisti.get(i);
-                Object[] row = {
-                    i+1,
-                    CiclistaSel.nome,
-                    CiclistaSel.numero,
-                    sdf.format(CiclistaSel.tempo),
-                    CiclistaSel.getDiff(ciclisti.get(0).tempo),
-                };
-                dtm.addRow(row);
-                }
-                break;
+                try {
+                    Date ntempo = sdf.parse((JOptionPane.showInputDialog("Inserisci il tempo modificato")));
+                    ciclisti.remove(pos);
+                    cic.setTempo(ntempo);
+                    int newPos = 0;
+                    for (int i = 0; i < ciclisti.size(); i++) {
+                        if (ntempo.before(ciclisti.get(i).getTempo())) {
+                            break;
+                        }
+                        newPos++;
+                    }
+                    ciclisti.add(newPos, cic);
+                    
+                    dtm.setRowCount(0);
+                    for (int i = 0; i < ciclisti.size(); i++) {
+                        Ciclista CiclistaSel = ciclisti.get(i);
+                        Object[] row = {
+                            i + 1,
+                            CiclistaSel.getNome(),
+                            CiclistaSel.getNumero(),
+                            sdf.format(CiclistaSel.getTempo()),
+                            CiclistaSel.getDiff((Date) ciclisti.get(0).getTempo()),
+                        };
+                        dtm.addRow(row);
+                    }
 
-            default:
-                JOptionPane.showMessageDialog(null, "Cella non modificabile","Errore",JOptionPane.ERROR_MESSAGE);
-        }
+                } catch (ParseException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ciclisti.remove(jTable2.getSelectedRow());
         
+        dtm.setRowCount(0);
+        for (int i = 0; i < ciclisti.size(); i++) {
+            Ciclista CiclistaSel = ciclisti.get(i);
+            Object[] row = {
+                i + 1,
+                CiclistaSel.getNome(),
+                CiclistaSel.getNumero(),
+                sdf.format(CiclistaSel.getTempo()),
+                CiclistaSel.getDiff((Date) ciclisti.get(0).getTempo()),
+            };
+            dtm.addRow(row);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

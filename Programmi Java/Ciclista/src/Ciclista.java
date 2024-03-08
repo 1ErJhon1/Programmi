@@ -35,4 +35,20 @@ public class Ciclista {
         }else
             return String.format("%02d:%02d:%02d", ore, minuti%60, secondi%60);
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public Date getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(Date tempo) {
+        this.tempo = tempo;
+    }
 }
