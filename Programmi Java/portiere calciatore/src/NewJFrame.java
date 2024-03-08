@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -13,12 +14,14 @@ import java.util.ArrayList;
 public class NewJFrame extends javax.swing.JFrame {
     ArrayList<Portiere> portieri=new ArrayList<>();
     ArrayList<Calciatore> calciatori=new ArrayList<>();
-
+        Object[] nomicolonne={"Nome Cognome","Goal segnati","Partite giocate","Goal subiti","Rigori subiti","Rigori parati"};
+    DefaultTableModel dtm=new DefaultTableModel(null, nomicolonne);
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+        jTable1.setModel(dtm);
     }
 
     /**
@@ -55,8 +58,8 @@ public class NewJFrame extends javax.swing.JFrame {
         btncerca = new javax.swing.JButton();
         txtcercacalc = new javax.swing.JTextField();
         btngiocpart = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jLabel6.setText("Rigori Parati");
 
@@ -233,9 +236,18 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -247,16 +259,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btngiocpart)
-                                .addGap(9, 9, 9)))
-                        .addGap(55, 55, 55))))
+                        .addComponent(btngiocpart)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,11 +275,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
+                        .addGap(155, 155, 155)
                         .addComponent(btngiocpart)
-                        .addGap(0, 98, Short.MAX_VALUE)))
+                        .addGap(0, 98, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -287,12 +297,25 @@ public class NewJFrame extends javax.swing.JFrame {
             int rigoriparati=Integer.valueOf(txtrigpar1.getText());
             Portiere por=new Portiere(goalsubiti, rigorisubiti, rigoriparati, nome, goalsegnati, partitegiocate);
             portieri.add(por);
+            
         }else{
             String nome=txtinsnome.getText();
             int goalsegnati=Integer.valueOf(txtinsgoalsegn.getText());
             int partitegiocate=Integer.valueOf(txtinspartite.getText());
             Calciatore cal=new Calciatore(nome, goalsegnati, partitegiocate);
             calciatori.add(cal);
+                Object nomeoObject=calciatori.getLast().nome;
+                Object goalSegnatiObject=calciatori.getLast().goalSegnati;
+                Object partiteGiocateObject=calciatori.getLast().partiteGiocate;
+            Object[] nomicolonne={
+                nomeoObject,
+                goalSegnatiObject,
+                partiteGiocateObject,
+                "/",
+                "/",
+                "/",
+            };
+            dtm.addRow(nomicolonne);
         }
     }//GEN-LAST:event_btninsActionPerformed
 
@@ -404,8 +427,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtcercacalc;
     private javax.swing.JTextField txtinsgoalsegn;
     private javax.swing.JTextField txtinsgsub;
