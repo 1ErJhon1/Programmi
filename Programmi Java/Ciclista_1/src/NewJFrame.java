@@ -25,19 +25,13 @@ public class NewJFrame extends javax.swing.JFrame {
     new Object[][]{},
     new String[]{"Posizione", "Nome", "Numero", "Tempo", "Differenza"}
     );
-    DefaultTableModel dtm2=new DefaultTableModel(
-    new Object[][]{},
-    new String[]{"Nome","Numero","Tempo"}
-    );
-
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
         jTable2.setModel(dtm);
-        jTable3.setModel(dtm2);
-        
+        jLabel5.setVisible(false);
     }
     
 
@@ -52,6 +46,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -64,8 +59,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,6 +74,8 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestione ciclista");
@@ -174,55 +171,55 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jButton3.setText("Ordina");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
-        ));
-        jScrollPane3.setViewportView(jTable3);
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("ATTENZIONE: CLASSIFICA NON ORDINATA!!!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton3)
+                        .addGap(64, 64, 64)
                         .addComponent(jButton1)
                         .addGap(64, 64, 64)
-                        .addComponent(jButton2)
-                        .addGap(128, 128, 128))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(184, 184, 184)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap())
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -242,34 +239,25 @@ public class NewJFrame extends javax.swing.JFrame {
         
         Ciclista ciclista=new Ciclista(nome, tempo, numero);
         Object[] row1={
+            "",
             ciclista.nome,
             ciclista.numero,
-            sdf.format(ciclista.tempo)
+            sdf.format(ciclista.tempo),
+            "",
         };
-        dtm2.addRow(row1);
+        dtm.addRow(row1);
         int pos=0;
         for (int i=0;i<ciclisti.size();i++){
             if (tempo.before(ciclisti.get(i).tempo)){
                 break;
             }
-                pos++;
+            pos++;
         }
         ciclisti.add(pos, ciclista);
-        dtm.setRowCount(0);
-        for (int i = 0; i < ciclisti.size(); i++) {
-        Ciclista CiclistaSel = ciclisti.get(i);
-        Object[] row = {
-            i+1,
-            CiclistaSel.nome,
-            CiclistaSel.numero,
-            sdf.format(CiclistaSel.tempo),
-            CiclistaSel.getDiff(ciclisti.get(0).tempo),
-        };
-        dtm.addRow(row);
-        }
         txtnome.setText("");
         txtnumero.setText("");
         txttempo.setText("");
+        jLabel5.setVisible(true);
     }//GEN-LAST:event_btninsActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -302,19 +290,6 @@ public class NewJFrame extends javax.swing.JFrame {
                         newPos++;
                     }
                     ciclisti.add(newPos, cic);
-                    
-                    dtm.setRowCount(0);
-                    for (int i = 0; i < ciclisti.size(); i++) {
-                        Ciclista CiclistaSel = ciclisti.get(i);
-                        Object[] row = {
-                            i + 1,
-                            CiclistaSel.getNome(),
-                            CiclistaSel.getNumero(),
-                            sdf.format(CiclistaSel.getTempo()),
-                            CiclistaSel.getDiff((Date) ciclisti.get(0).getTempo()),
-                        };
-                        dtm.addRow(row);
-                    }
 
                 } catch (ParseException ex) {
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -324,20 +299,24 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         ciclisti.remove(jTable2.getSelectedRow());
-        
+        dtm.removeRow(jTable2.getSelectedRow());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jLabel5.setVisible(false);
         dtm.setRowCount(0);
         for (int i = 0; i < ciclisti.size(); i++) {
             Ciclista CiclistaSel = ciclisti.get(i);
             Object[] row = {
-                i + 1,
-                CiclistaSel.getNome(),
-                CiclistaSel.getNumero(),
-                sdf.format(CiclistaSel.getTempo()),
-                CiclistaSel.getDiff((Date) ciclisti.get(0).getTempo()),
+                i+1,
+                CiclistaSel.nome,
+                CiclistaSel.numero,
+                sdf.format(CiclistaSel.tempo),
+                CiclistaSel.getDiff(ciclisti.get(0).tempo),
             };
-            dtm.addRow(row);
+        dtm.addRow(row);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,16 +357,17 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnins;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTextField txtnome;
     private javax.swing.JTextField txtnumero;
     private javax.swing.JTextField txttempo;
