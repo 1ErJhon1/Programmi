@@ -317,15 +317,17 @@ public class NewJFrame extends javax.swing.JFrame {
             };
             dtm.addRow(nomicolonne);
         }
-    }//GEN-LAST:event_btninsActionPerformed
-
-    private void btncancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancActionPerformed
         txtinsgoalsegn.setText("");
         txtinsgsub.setText("");
         txtinsnome.setText("");
         txtinspartite.setText("");
         txtrigpar1.setText("");
         txtrigsub1.setText("");
+    }//GEN-LAST:event_btninsActionPerformed
+
+    private void btncancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancActionPerformed
+        int row=
+        if()
     }//GEN-LAST:event_btncancActionPerformed
 
     private void cbxportiereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxportiereActionPerformed
