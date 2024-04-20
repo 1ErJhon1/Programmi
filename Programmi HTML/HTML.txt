@@ -1,0 +1,72 @@
+				HTML
+commento	<!--   -->
+bgcolor="colore"
+background="sfondo.gif"
+text colore testo
+link colore link
+vlink colori link visitati
+alink colore link attivi
+assoluto 
+relativo
+salire di livello ../
+scendere di livello /
+dl lista con spaziatura
+dt inserimento termine
+dd inserimento didascalia
+align right left center
+alt descrizione immagine
+title descrizione immagine quando passi con il mouse
+
+				TAG VIDEO
+<video>
+<video poster="percorso copertina" controls>
+<source src="file video" type="formato video">
+messaggio errore
+</video>
+
+controls mostra i controlli
+
+				TAG AUDIO
+<audio elencoOpzioni>
+<source src="file audio" type="formato audio"
+messaggio errore
+</audio>
+
+				TABELLE
+<table>
+    <tr>
+	<td>afoeiu</td>
+	<td>afoeiu</td>
+    </tr>
+</table>
+
+attributi table:
+align allineamento tabella nella pagina
+border cambiare spessore tabella default=0 bordi non visibili
+cellpadding 	spazio tra bordo della tabella e contenuto cella
+cellspacing	distanza tra una cella e l'altra
+width	larghezza tabella
+height	altezza tabella
+bgcolor	colore sfondo tabella
+bordercolor	colore bordi
+background	immagine sfondo tabella
+
+
+attributi tr:
+aling allineamento orizzontale di tutte le celle
+valign allineamento orizzontale
+
+
+attributi dr:
+rowspan 	fa si che una cella risulti alta n celle
+
+&npsp per aggiungere spazi tra parole
+
+
+Link pagine esterne
+tag <a href="mettereillink.html">
+title per il mouse quando passa sul link
+
+Link pagine interne (ancore)
+destinazione <a name="posizione1>...</a>
+partenza <a href="#posizione1">nome che vogliamo del link</a>
