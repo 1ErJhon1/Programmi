@@ -2,5 +2,6 @@
     "C_Cpp.default.compilerPath": "c:\\msys64\\clang64.exe",
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "E:/Scuola/Programmi/Flutter/app_flutter/windows"
 }
