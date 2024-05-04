@@ -1,0 +1,26 @@
+<table>
+    <tr>
+	<td>afoeiu</td>
+	<td>afoeiu</td>
+    </tr>
+</table>
+
+attributi table:
+align allineamento tabella nella pagina
+border cambiare spessore tabella default=0 bordi non visibili
+cellpadding 	spazio tra bordo della tabella e contenuto cella
+cellspacing	distanza tra una cella e l'altra
+width	larghezza tabella
+height	altezza tabella
+bgcolor	colore sfondo tabella
+bordercolor	colore bordi
+background	immagine sfondo tabella
+
+
+attributi tr:
+aling allineamento orizzontale di tutte le celle
+valign allineamento orizzontale
+
+
+attributi dr:
+rowspan 	fa si che una cella risulti alta n celle

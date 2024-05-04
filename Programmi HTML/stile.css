@@ -1,0 +1,37 @@
+h1{
+    color: blue;
+    text-align: center;
+}
+
+h2{
+    color: red;
+    text-align: left;
+}
+
+#par1{
+    background-color: yellow;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+#par2{
+    background-color: orange;
+    font-size: 1em;
+    text-align: justify;
+}
+
+#div1{
+    color: white;
+    background-color: black;
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+}
+
+#div2{
+    color: gray;
+    background-color: blue;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: right;
+}
