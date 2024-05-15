@@ -76,6 +76,9 @@ pos tramite dati se lo mettiamo vengono inviati direttamente allo script
 
 required per far compliare per forza un campo
 
+<type>
+email date <range Min max step>
+
 CSS
 
 Serve per regolare il layout e per formattare la pagina
