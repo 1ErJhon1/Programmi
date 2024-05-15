@@ -1,0 +1,14 @@
+h1 {
+    color: blue;
+    text-align: center;}
+
+h2 {
+    color: red;
+    text-align: left;}
+
+.primodiv {
+    color: white; 
+    background-color: black; 
+    font-size: 0.9em; 
+    line-height: 1.4; 
+    text-align: left;}

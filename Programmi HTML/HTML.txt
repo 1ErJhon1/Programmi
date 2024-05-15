@@ -70,3 +70,54 @@ title per il mouse quando passa sul link
 Link pagine interne (ancore)
 destinazione <a name="posizione1>...</a>
 partenza <a href="#posizione1">nome che vogliamo del link</a>
+
+get passa tramite parametro
+pos tramite dati se lo mettiamo vengono inviati direttamente allo script
+
+required per far compliare per forza un campo
+
+<type>
+email date <range Min max step>
+
+CSS
+
+Serve per regolare il layout e per formattare la pagina
+per richiamare un file CSS <link href="percorso del file" rel="stabilire il tipo di associazione" type="per indicare il tipo di documento(text/css)" media="per indicare il tipo di dispositivo(di solito all)"
+
+per definire lo stile vengono utilizzati i selettori
+di tipo o elemento
+classi
+id
+pseudo-classi
+
+NEL CSS ESTERNO
+	selettore{
+	proprietà:valore;
+	}
+p{
+color:navy;
+}
+
+p=selettore	color:navy;= dichiarazione
+
+selezioni tutto
+*{
+proprietà:valore;
+}
+
+CSS FOGLIO INCORPORATO
+
+<style type="text/css">
+selettore{
+proprietà:valore;
+}
+</style>
+
+CSS FOGLI IN LINEA
+<h1 style="text-align:center;">testo</h1>
+
+creare una classe con .nome_classe{formattazione}
+usarla con <h1 class="nome_classe>testo</h1>
+
+id ha la stessa funzione della classe #mioid{formattazione}
+<h1 id="mioid">testo</h1>
