@@ -1,0 +1,32 @@
+.menu-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.dish {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.dish img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.dish h3 {
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: bold;
+    color: #f00;
+}
+
+/* Stili generali */
+/* Aggiungi stili per header, navigazione, footer, ecc. */
