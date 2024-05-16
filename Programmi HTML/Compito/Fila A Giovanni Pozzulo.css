@@ -1,0 +1,49 @@
+body{
+    height: 100%;
+    margin: 0;
+}
+header{
+    text-align: center;
+    height: 150px;
+    background-color: lightgreen;
+}
+
+aside {
+    float: left;
+    height: 610px;
+    width: 200px;
+    background-color: yellow;
+}
+
+#TitleChiSono{
+    text-align: center;
+
+}
+
+article {
+    margin-top: -20px;
+    width: 100%;
+}
+
+#Article_Tigre{
+    background-color: lightblue;
+    background-color: grey;
+    text-align: center;
+    height: 360;
+}
+
+#Article_Chi_Sono{
+    margin-top: -20px;
+    background-color: lightblue;
+    height: 250px;
+}
+
+footer{
+    text-align: center;
+    height: 100px;
+    background-color: lightgreen;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
