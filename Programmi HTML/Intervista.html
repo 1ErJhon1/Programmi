@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Intervista</title>
+    </head>
+    <body>
+        <header><h1>Intervista</h1></header>
+        <form action="" method="get">
+            <fieldset>
+                <legend>Dati anagrafici</legend>
+                <table>
+                    <tr>
+                        <td>Inserisci il nome</td>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td>Inserisci il cognome</td>
+                        <td><input type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td>Inserisci data di nascita</td>
+                        <td><input type="date" name="data" id="data" required></td>
+                    </tr>
+                    <tr>
+                        <td>Inserisci il sesso</td>
+                        <td>
+                            <select name="sesso" id="sesso">
+                                <option value="1">M</option>
+                                <option value="2">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Inserisci indirizzo email</td>
+                        <td><input type="email" name="email" id="email" required></td>
+                    </tr>
+                    <tr>
+                        <td>Inserisci numero di telefono</td>
+                        <td><input type="tel" name="telefono" id="telefono"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Intervista</legend>
+                <table>
+                    <tr>
+                        <td>Dovendo proseguire gli studi quale facoltà prediligeresti?</td>
+                    </tr>
+                    <tr><td><input type="checkbox" name="check" id="check">Umanistica</td></tr>
+                    <tr><td><input type="checkbox" name="check" id="check">Scientifica</td></tr>
+                    <tr><td><input type="checkbox" name="check" id="check">Altro</td></tr>
+                    <tr>
+                        <td>Note su Altro</td>
+                        <td><textarea name="Altro" id="Altro"></textarea></td>
+                    </tr>
+                    <tr><td>Che tipo di studio prediligeresti?</td></tr>
+                    <tr><td><input type="radio" name="rad" id="rad">Didattica In Presenza</td></tr>
+                    <tr><td><input type="radio" name="rad" id="rad">Didattica A Distanza</td></tr>
+                    <tr><td><input type="radio" name="rad" id="rad">Didattica Mista</td></tr>
+                </table>
+                <br>
+                <input type="checkbox" name="consensi" id="consensi" required>
+                Dichiaro di dare consenso su uso dei miei dati personali per usi connessi a codesto contesto.
+            </fieldset>
+            <br>
+            <button type="reset">Reset dati</button>
+            <button type="submit">Invia dati</button>
+        </form>
+    </body>
+
+</html>
