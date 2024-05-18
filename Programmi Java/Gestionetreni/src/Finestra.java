@@ -22,11 +22,18 @@ import java.util.logging.Logger;
  * @author 4A
  */
 public class Finestra extends javax.swing.JFrame {
+    String nomefile="NuovoFile.txt";
     /**
      * Creates new form Finestra
      */
+    
     public Finestra() {
         initComponents();
+        try {
+            Files.createFile(Paths.get(nomefile));
+                    } catch (IOException ex) {
+            Logger.getLogger(Finestra.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
         
 
@@ -348,7 +355,7 @@ public class Finestra extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtntrenoinsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtntrenoinsActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtntrenoinsActionPerformed
 
     private void txtcomptinsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcomptinsActionPerformed
@@ -360,11 +367,37 @@ public class Finestra extends javax.swing.JFrame {
         app=txtinspartt.getText();
         txtinspartt.setText(txtarrivotins.getText());
         txtarrivotins.setText(app);
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btninstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninstActionPerformed
-        
+        try {
+            BufferedWriter bw=new BufferedWriter(new FileWriter(nomefile, true));
+            bw.write(txtcomptins.getText());
+            bw.newLine();
+            bw.write(txtntrenoins.getText());
+            bw.newLine();
+            bw.write(txtinspartt.getText());
+            bw.newLine();
+            bw.write(txtarrivotins.getText());
+            bw.newLine();
+            bw.write(spinbeconomy.getValue().toString());
+            bw.newLine();
+            bw.write(spinb2cl.getValue().toString());
+            bw.newLine();
+            bw.write(spinb1cl.getValue().toString());
+            bw.newLine();
+            bw.newLine();
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Finestra.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        txtcomptins.setText("");
+        txtntrenoins.setText("");
+        txtinspartt.setText("");
+        txtarrivotins.setText("");
+        spinbeconomy.setValue(0);
+        spinb2cl.setValue(0);
+        spinb1cl.setValue(0);
     }//GEN-LAST:event_btninstActionPerformed
 
     /**
@@ -395,23 +428,9 @@ public class Finestra extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        String nomefile="NuovoFile.txt";
-        File file=new File(nomefile);
-        try {
-            Files.createFile(Paths.get(nomefile));
-        } catch (IOException ex) {
-            Logger.getLogger(Finestra.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            BufferedWriter bw=new BufferedWriter(new FileWriter(nomefile));
-        } catch (IOException ex) {
-            Logger.getLogger(Finestra.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            BufferedReader br=new BufferedReader(new FileReader(nomefile));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Finestra.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Finestra().setVisible(true);
