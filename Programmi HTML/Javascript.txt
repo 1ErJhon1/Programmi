@@ -1,0 +1,42 @@
+JavaScript
+
+javascript è case sensitive
+
+viene compilato riga per riga 
+non serve il ; finale
+
+in una pagina HTML
+<script type="text/javascript" src="...">
+...
+</script>
+
+
+var nomevariabile=valorevariabile
+dichiarazione non obbligatoria
+si può inizializzare a null
+le variabili non inizializzate sono undefined
+
+messaggio di dialogo
+alert("...")
+confirm ("...") che mostra un messaggio
+promt ("...") che richiede un dato
+var variabile=windows.confirm (confermare) (true se ha confermato altrimenti false)
+
+concatenazione delle stringhe con "+"
+
+per dichiarare una stringa
+test="...."
+test=new String
+
+per vedere la lunghezza di una string testo.leght
+toUpperCase() o toLowerCase() per mettere i caratteri in maiuscolo/minuscolo
+substring() restituisce una porzione di stringa testo.substring(inizio,fine)
+charAt() preleva un carattere da una stringa
+indexOf("stringa") permette di trovare una stringa in una stringa
+
+si può dichiarare un array con
+var nomearray=new Array(numeroelementi)
+var nomearray=new Array()
+var nomearray=new Array(val1,val2)
+
+data una frase il mio gatto trovare le varie substringhe
