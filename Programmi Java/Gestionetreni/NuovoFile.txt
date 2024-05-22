@@ -1,7 +1,7 @@
 
 610
 Intercity
-19/05
+19/05/2024
 Brindisi
 Foggia
 08:07
@@ -28,3 +28,18 @@ ojnzasdnjkfado
 0
 3
 7
+
+487
+frecciarossa
+25/05/2024
+Bari
+Foggia
+12:09
+10:39
+01:30
+200
+10
+150
+15
+100
+25
