@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Data una stringa stampare le sottostringhe</title>
+    </head>
+    <body>
+        <script>
+            var txt=prompt("Inserisci un testo")
+            var nlett=txt.length
+
+            for(var i=0;i<nlett;i++){
+                for(var j=i+1;j<=nlett;j++){
+                    document.write(txt.substring(i,j)+"<br>")
+                }
+            }
+        </script>
+    </body>
+</html>
