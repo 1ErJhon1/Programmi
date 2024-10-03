@@ -1,0 +1,255 @@
+Tipi di Dati in JavaScript
+
+1. Tipi di Dati Primitivi
+- Tipi principali:
+  - number: Rappresenta numeri, sia interi che decimali.
+  - boolean: Rappresenta valori di verità, true o false.
+  - string: Rappresenta sequenze di caratteri.
+
+- Controllo tipo:
+  - Utilizza l'operatore typeof per determinare il tipo di una variabile.
+
+- Valore non definito:
+  - Le variabili non inizializzate hanno il valore undefined.
+
+- Primitività:
+  - I tipi primitivi rappresentano un singolo valore semplice.
+
+---
+
+2. Array come Tipo Complesso
+- Definizione:
+  - Collezioni ordinate di valori.
+
+- Accesso:
+  - Gli elementi si accedono tramite indici, che iniziano da 0.
+
+- Creazione:
+  - Utilizzando parentesi quadre [].
+
+- Esempio:
+  let a = [10, 20, 30];
+  a[2] = 50; // Modifica il terzo elemento
+
+- Accesso e modifica:
+  - Gli elementi possono essere referenziati e modificati tramite il loro indice.
+
+---
+
+3. Oggetto come un Tipo di Array Diverso
+- Definizione:
+  - Collezioni di coppie chiave-valore.
+
+- Proprietà:
+  - Le chiavi devono essere uniche e possono avere valori di qualsiasi tipo.
+
+- Accesso:
+  - Tramite chiavi.
+
+- Esempio:
+  let sampleObject = {
+      id: 10, 
+      delay: 20,
+      name: "esempio",
+      isPresent: true
+  };
+  sampleObject.delay = sampleObject.delay * 2; // Modifica la proprietà delay
+
+- Osservazione:
+  - Gli oggetti rappresentano entità del mondo reale con proprietà.
+
+---
+
+4. Creazione di Oggetti
+- Metodo base: Notazione letterale:
+  - Esempio di oggetto vuoto:
+    let contact = {};
+
+  - Aggiunta di proprietà:
+    contact.tel = "207-662-5412";
+
+  - Creazione con proprietà iniziali:
+    let contact = {
+        tel: "207-662-5412",
+        email: "RonaldSMurphy@freepost.org"
+    };
+
+  - Notazione chiave:
+    - Le chiavi possono essere in virgolette per nomi multi-parola:
+      let contact = {
+          "first name": "Ronald"
+      };
+    - Uso di camelCase è preferito: firstName.
+
+- Notazione punto:
+  - Esempio: console.log è un esempio di notazione punto.
+
+---
+
+5. Cancellazione di Oggetti
+- Gestione della memoria:
+  - Gli oggetti occupano memoria e possono causare overflow.
+
+- Garbage Collector:
+  - Rimuove automaticamente gli oggetti non più necessari.
+
+- Nessuna cancellazione esplicita:
+  - Non esiste un metodo per cancellare oggetti esplicitamente.
+
+---
+
+6. Tipi di Oggetti e Proprietà
+6.1 Tipi di Oggetti
+- Esempio di variabili di vari tipi:
+  let nr = 10; 
+  let b = false; 
+  let str = "uno dos tres"; 
+  let arr = [10, 20, 30]; 
+  let obj = { x: 10, y: 20 }; 
+  let fn = function(arg) { console.log(arg); }; 
+  fn(123); // -> 123
+
+- Oggetto di test con proprietà:
+  let test = {
+      nr: 10, 
+      b: false, 
+      str: "uno dos tres", 
+      arr: [10, 20, 30], 
+      obj: { x: 10, y: 20 }, 
+      fn: function(arg) { console.log(arg); } 
+  };
+  test.fn(123);
+
+6.2 Proprietà Annidate
+- Proprietà di un oggetto possono essere oggetti a loro volta.
+- Esempio di accesso:
+  console.log(test.obj.x);
+  test.obj.y = 40;
+
+6.3 Funzione come Proprietà – Metodo
+- Proprietà di un oggetto può essere una funzione (metodo).
+- Esempio di oggetto punto con metodi:
+  let point = {
+      x: 0,
+      y: 0,
+      moveHorizontally: function(distance) {
+          this.x += distance;
+      },
+      moveVertically: function(distance) {
+          this.y += distance;
+      }
+  };
+  console.log(point.x); // -> 0
+  point.moveHorizontally(30);
+  console.log(point.x); // -> 30
+
+6.4 Aggiunta di Nuove Proprietà
+- Gli oggetti possono cambiare dinamicamente.
+- Esempio di aggiunta di proprietà:
+  let contact = { tel: "207-662-5412", email: "RonaldSMurphy@freepost.org" };
+  contact.firstName = "Ronald";
+  contact.lastName = "Murphy";
+  console.log(contact.tel); // -> 207-662-5412
+  console.log(contact.firstName); // -> Ronald
+  console.log(contact.notes); // -> undefined
+
+6.5 Modifica di Proprietà
+- Possibilità di modificare il valore delle proprietà.
+- Esempio di modifica:
+  contact.email = ["RonaldSMurphy@freepost.org", "rsmurphy@briazz.com"];
+  contact.email = { private: "RonaldSMurphy@freepost.org", work: "rsmurphy@briazz.com" };
+  console.log(contact.email.work); // -> rsmurphy@briazz.com
+
+6.6 Cancellazione di Proprietà
+- Rimozione di proprietà con il comando delete.
+- Esempio di cancellazione:
+  delete contact.email.work;
+  console.log(contact.email.work); // -> undefined
+  console.log(contact.email.private); // -> RonaldSMurphy@freepost.org
+
+---
+
+7. Notazione a Parentesi
+7.1 Notazione a Parentesi vs. Notazione Punto
+- Alternativa alla notazione punto.
+- Esempio di accesso:
+  contact.tel === contact["tel"];
+  contact.email.work === contact["email"]["work"];
+
+7.2 Chiavi Multi-Parola
+- Utilizzo di chiavi che contengono spazi.
+- Esempio:
+  let contact = { "first name": "Ronald" };
+  contact["first name"] = "Tim"; // Funziona
+  // contact.first name = "Tim"; // Errore di sintassi
+
+7.3 Chiavi Calcolate
+- Utilizzo di chiavi calcolate durante l'esecuzione.
+- Esempio di accesso tramite chiavi calcolate:
+  let contact = {
+      email_1: "RonaldSMurphy@freepost.org",
+      email_2: "rsmurphy@briazz.com"
+  };
+  for (let i = 1; i <= 2; i++) {
+      let key = "email_" + i;
+      console.log(`${key}: ${contact[key]}`);
+  }
+
+---
+
+8. Test di Esistenza delle Proprietà e Enumerazione
+8.1 Test di Esistenza
+- Verifica se una proprietà esiste:
+  if (contact.notes) { /* codice */ }
+
+- Se la proprietà non esiste o è undefined, si può assegnare un nuovo valore:
+  if (!contact.notes) { contact.notes = "qualcosa di importante"; }
+
+8.2 Test di Esistenza con "in"
+- Utilizzo della parola chiave in:
+  if ("notes" in contact) { /* codice */ }
+
+8.3 Enumerazione con "for ... in"
+- Enumerare tutte le proprietà di un oggetto:
+  for (let x in contact) {
+      console.log(x); // Nome della proprietà
+  }
+
+- Accesso ai valori:
+  for (let x in contact) {
+      console.log(contact[x]); // Valore della proprietà
+  }
+
+- Visualizzazione di nome, tipo e valore:
+  for (let x in contact) {
+      console.log(`${x} : ${typeof contact[x]} : ${contact[x]}`);
+  }
+
+8.4 Metodo Object.keys
+- Restituisce un array dei nomi delle proprietà:
+  let keys = Object.keys(contact);
+  // keys ora contiene ["tel", "email"]
+
+---
+
+9. Riferimenti e Clonazione di Oggetti
+9.1 Comportamento delle costanti
+- Uso di const per dichiarare variabili:
+  const x = 10;
+  // x = 20; // TypeError
+  
+- Oggetti dichiarati con const possono essere modificati:
+  const contact = {};
+  contact.email = "RonaldSMurphy@freepost.org"; // Funziona
+
+9.2 Modifica di oggetti const
+- const protegge solo il riferimento, non il contenuto dell'oggetto.
+- Esempio:
+  const contact = { email: "Ronald" };
+  contact.email = "Tim"; // Modifica consentita
+
+9.3 Confronto tra oggetti
+- Confronto di riferimenti:
+  var point1 = { x: 10, y: 20 };
+  var point2 = { x: 10, y: 20 };
+  console.log(point1 === point2); // -> false
