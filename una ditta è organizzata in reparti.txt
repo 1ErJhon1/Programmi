@@ -1,0 +1,6 @@
+una ditta è organizzata in reparti e ciascun dipendente può lavorare in un unico reparto al quale è assegnato un unico capo reparto. I dipendenti della ditta possono frequentare corsi di aggiornamento. Il database realizzato deve rispondere alle seguenti interrogazioni: 
+-elenco dei dati anagrafici dei dipendenti di un reparto;
+-elenco dei dipendenti che sono stati assunti nell'intervallo compreso tra due date;
+-elenco dei reparti con il relativo capo reparto;
+-numero dei dipendenti per ciascun reparto;
+-elenco di tutti i dipendenti che hanno seguito un corso di aggiornamento
