@@ -1,0 +1,61 @@
+sistema centralizzato quando tutti i dati e le applicazioni si distribuiscono in un solo luogo
+
+da non confondere con il sistema parallelo
+
+sistema distribuito quando cooperano e le varie applicazioni per un obiettivo comune sono sui vari host (tutto è collegato)
+anche la parte hardware e software sono in collaborazione
+ci sono diversi ruoli (client, server, actor ) 
+non tutti i sistemi distribuiti sono connessi ad internet
+
+differenza tra sistema distribuito e parallelo
+distribuito devono comunicare e possono anche non collaborare (meno sicuro)
+parallelo devono comunicare e collaborare (sistema inaccessibile quindi sicuro)
+
+pervasivi è integrato in un ambiente circostante
+
+sistema distribuito vantaggi
+sottosistema omogeneo indipendente dal sistema software ci deve essere una esperienza ottimale e uguale
+[riuscire a connettere cose diverse]
+
+ridondanza dei dati
+
+trasparenza: abbiamo tanti dispositivi ma è come se ne avessimo uno
+trasparenza di accesso: posso accedere alle varie applicazioni senza che l'utente sia a conoscenza delle preferenze
+trasparenza di locazione: maschera la posizione dell'applicazione
+trasparenza di concorrenza: accedere alle applicazioni in più utenti (perché è una memoria condivisa)
+trasparenza di replicazione: è possibile duplicare le risorse mascherandolo all'utente
+trasparenza di guasti: ripristinare i dati se c'è qualche guasto
+trasparenza di prestazioni: aumentare le prestazioni senza chiudere il sistema
+trasparenza di scalabilità: espandere il sistema senza chiuderlo
+	-geografica: mettere risorse lontane dagli utenti
+	-economicità: il rapporto costo/prestazioni è distribuito su più dispositivi (margine di guadagno superiore)
+	-apertura: c'è la possibilità di integrare cose su più dispositivi attraverso i protocolli
+	-condivisione: condividere le risorse con gli altri
+	-connettività: connettersi alle risorse
+
+cluster computing: il meteo (si prendono tantissimi dati e vengono poi sviluppati) hanno un obbiettivo comune e si connettono tramite LAN la potenza di calcolo è la somma di tutte le potenze di calcolo e vengono controllati da un app management
+grid computing: interne il carico è distribuito su ogni macchina
+
+TBS: 
+
+ possiamo operare su 
+portabilità: possiamo operare su vari dispositivi
+
+
+Svantaggi
+-livello economico per acquistare un nuovo prodotto e fare corsi di aggiornamento
+-maggiore complessità: c'è una struttura ramificata quindi più difficile per trovare i problemi
+-minore sicurezza e riservatezza: perché 
+
+accoppiamento forte: le risorse informative vengono controllate da una o più organizzazioni
+accoppiamento debole: sono condivise su più fattori e non hanno un organo centrale
+
+a seconda di come vengono combinati i dati
+SISD	SIMD	MISD	MIMD
+
+MISD
+Istruzioni multiple su dato singolo
+
+MIMD
+molti dati quindi si devono regolare gli accessi e devono essere tutti su una memoria centrale (database)
+

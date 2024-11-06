@@ -4,3 +4,7 @@ una ditta è organizzata in reparti e ciascun dipendente può lavorare in un uni
 -elenco dei reparti con il relativo capo reparto;
 -numero dei dipendenti per ciascun reparto;
 -elenco di tutti i dipendenti che hanno seguito un corso di aggiornamento
+
+reparto 1,1 dipendente
+dipendente 1,n corso
+corso è un'entità
